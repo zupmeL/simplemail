@@ -1,2 +1,3 @@
 @import "./std.css";
-@import "../js/components/header/styles.css"
+@import "../js/components/header/header.css";
+@import "../js/components/navbar/navbar.css";
