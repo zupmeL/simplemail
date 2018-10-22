@@ -27,3 +27,9 @@
 html {
     font-family: Roboto, sans-serif;
 }
+
+.link {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}

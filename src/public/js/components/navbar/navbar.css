@@ -20,15 +20,15 @@
 }
 
 .navigation-bar__li,
-.navigation-bar__li--selected {
+.navigation-bar__li-selected {
     margin: var(--margin-s) 0;
 }
 
-.navigation-bar__li--selected {
-    color: var(--color-red);
+.navigation-bar__li-selected {
+    color: var(--color-red) !important;
     font-weight: bold;
 }
 
-.navigation-bar__li--number {
+.navigation-bar__li-number {
     font-weight: bold;
 }
