@@ -3,7 +3,8 @@ const paths = {
     inbox: "/inbox",
     spam: "/spam",
     sentEmails: "/sent-emails",
-    drafts: "/drafts"
+    drafts: "/drafts",
+    email: emailId => `/emails/${ emailId }`
 }
 
 module.exports = paths;
