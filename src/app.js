@@ -11,33 +11,41 @@ app.get( "/emails", ( req, res ) => {
             subject: "Test Subject 1",
             isImportant: true,
             content: "This is my test content 1",
-            timestamp: Date.now() + 100000
+            timestamp: Date.now() - 450000
         },
         {
             id: 2,
             subject: "Test Subject 2",
             isImportant: false,
             content: "This is my test content 2",
-            timestamp: Date.now() + 200000
+            timestamp: Date.now() - 600000
         },
         {
             id: 3,
             subject: "Test Subject 3",
             isImportant: true,
             content: "This is my test content 3",
-            timestamp: Date.now() + 300000
+            timestamp: Date.now() - 500000
         },
         {
             id: 4,
             subject: "Test Subject 4",
             isImportant: true,
             content: "This is my test content 4",
-            timestamp: Date.now() + 400000
+            timestamp: Date.now() - 400000
         },
     ];
 
     res.json( emails );
-})
+});
+
+app.post( "/emails", ( req, res ) => {
+    
+    console.log( req.body );
+    console.log( "-----------------" );
+    res.json( req.body );
+
+});
 
 app.all( "*", ( req, res ) => {
     res.sendFile( path.join( __dirname, "..", "dist", "index.html" ) );

@@ -1,5 +1,6 @@
 @import "./std.css";
 @import "../js/components/app/app.css";
+@import "../js/components/compose/compose.css";
 @import "../js/components/header/header.css";
 @import "../js/components/navbar/navbar.css";
 @import "../js/components/inbox/inbox.css";
