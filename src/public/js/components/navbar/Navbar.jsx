@@ -37,9 +37,7 @@ class Navbar extends React.Component {
 
     async onSend( event ) {
         event.preventDefault();
-
-        console.log( event );
-
+        
         const recipients = event.target.recipients.value;
         const subject = event.target.subject.value;
         const message = event.target.message.value;

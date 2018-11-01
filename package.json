@@ -12,10 +12,11 @@
   },
   "author": "Stefano Prudenzi",
   "license": "MIT",
-  "dependencies": { 
+  "dependencies": {
     "@material-ui/core": "^3.2.0",
     "@material-ui/icons": "^3.0.1",
     "express": "^4.16.4",
+    "joi": "^14.0.3",
     "mongoose": "^5.3.8",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
