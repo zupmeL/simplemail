@@ -19,12 +19,14 @@ describe( "EmailModel", () => {
   it( "correctly serializes the model", async () => {
     const subject = "foo";
     const message = "bar";
+    const type = "outgoing";
     const created_at = new Date( "2018-11-01T12:00:00.000Z" );
     const recipients = [ "foo@bar.it" ];
     const email = new EmailModel( {
       recipients,
       subject,
       message,
+      type,
       created_at
     } );
     await email.save();
@@ -34,6 +36,7 @@ describe( "EmailModel", () => {
       _id: email.id,
       subject,
       message,
+      type,
       created_at,
       __v: 0
     };
