@@ -44,7 +44,7 @@ class Navbar extends React.Component {
         const request = SendEmailRequest( recipients, subject, message );
 
         try {
-            const response = await fetch( "/emails", request );
+            const response = await fetch( "/api/v1/emails", request );
             if ( !response.ok ) {
                 const json = await response.json();
                 throw new Error( json.error );

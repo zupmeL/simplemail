@@ -9,43 +9,44 @@ const app = express();
 app.use( express.json() );
 app.use( express.static( path.join( __dirname, "..", "dist" ) ) );
 
-app.get( "/emails", ( req, res ) => {
-    const emails = [ 
-        {
-            id: 1,
-            subject: "Test Subject 1",
-            isImportant: true,
-            content: "This is my test content 1",
-            timestamp: Date.now() - 450000
-        },
-        {
-            id: 2,
-            subject: "Test Subject 2",
-            isImportant: false,
-            content: "This is my test content 2",
-            timestamp: Date.now() - 600000
-        },
-        {
-            id: 3,
-            subject: "Test Subject 3",
-            isImportant: true,
-            content: "This is my test content 3",
-            timestamp: Date.now() - 500000
-        },
-        {
-            id: 4,
-            subject: "Test Subject 4",
-            isImportant: true,
-            content: "This is my test content 4",
-            timestamp: Date.now() - 400000
-        },
-    ];
+app.get(
+    "/api/v1/emails",
+    catchExceptions( async ( req, res ) => {
+        res.json( [] );
+    } )
+);
 
-    res.json( emails );
-});
+app.get(
+    "/api/v1/important-emails",
+    catchExceptions( async ( req, res ) => {
+        res.json( [] );
+    } )
+);
+
+app.get(
+    "/api/v1/sent-emails",
+    catchExceptions( async ( req, res ) => {
+        const emails = await emailService.getSentEmails();
+        res.json( emails );
+    } )
+);
+
+app.get(
+    "/api/v1/draft-emails",
+    catchExceptions( async ( req, res ) => {
+        res.json();
+    } )
+);
+
+app.get(
+    "/api/v1/spam-emails",
+    catchExceptions( async ( req, res ) => {
+        res.json();
+    } )
+);
 
 app.post( 
-    "/emails",
+    "/api/v1/emails",
     validateIncomingEmail,
     catchExceptions( async ( req, res ) => {
         const { recipients, subject, message } = req.body;
